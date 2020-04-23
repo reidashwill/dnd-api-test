@@ -1,37 +1,48 @@
-# _{Application Name}_
+# _Monster Fight_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _This app will pit two monsters form the D&D multiverse against each other in a battle to the death!_
 
-#### By _**{List of contributors}**_
+#### By _**Tyler Bowerman & Reid Ashwill**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_We are using this app as an opportunity to explore the open5e API that we will be using during team week._
+ 
+
+## Specifications
+
+|   Behavior Description   |  Input Ex.   |        Output Ex.        |
+|------------------------------|--------------|--------------------------|
+| 1. Make two seperate API calls to the open5e API to return two monster objects
+| 2. Display the stats of these monsters to the user.
+| 3. Creating a "dice roll" function to simulate the attacks the monsters are capable of
+| 4. Adding the attack bonus of the monsters to the dice roll, and comparing that number to the other monsters AC to determine whether or not the attack was sucessful.
+| 5. If attack is sucessful, reduce the target monsters hit points accordingly
+| 6. If one monsters hit points drops to 0, it is dead, and the other monster wins!
+
+## Known Bugs
+* 
+
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
-
-## Known Bugs
-
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
-
-## Support and contact details
-
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+* Clone this repository
+* Run npm install
+* run npm run start
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* HTML
+* CSS
+* Bootstrap 4.4.1
+* jQuery 3.4.1
+* JavaScript
+* Node
+* Webpack
+
 
 ### License
 
-*Licensed under the MIT license*
+*This software is licensed under the MIT license*
 
-Copyright (c) 2020 **_{List of contributors or company name}_**
+Copyright (c) 2020 **Reid Ashwill & Tyler Bowerman**
