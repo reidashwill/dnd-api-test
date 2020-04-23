@@ -5,9 +5,9 @@ export class Monster{
     this.hitPoints = hitPoints;
     this.damage = damage;
   }
-  async orcGrab() {
+  async monster1Grab() {
     try{
-      let response = await fetch(`https://api.open5e.com/monsters/orc`);
+      let response = await fetch(`https://api.open5e.com/monsters/aboleth`);
       let jsonifiedResponse;
       if (response.ok && response.status === 200) {
         jsonifiedResponse = await response.json();
@@ -23,9 +23,9 @@ export class Monster{
     }
     
   }
-  async dragonGrab() {
+  async monster2Grab() {
     try{
-      let response = await fetch(`https://api.open5e.com/monsters/adult-black-dragon`);
+      let response = await fetch(`https://api.open5e.com/monsters/young-gold-dragon`);
       let jsonifiedResponse;
       if (response.ok && response.status === 200) {
         jsonifiedResponse = await response.json();
@@ -38,6 +38,13 @@ export class Monster{
       return false;
     }
 
+  }
+  attack() {
+    var roll = (Math.floor(Math.random() * 20) + 1);
+    this.attackPower = (this.attackBonus + roll)
+    console.log(roll);
+    console.log(this.attackPower)
+  
   }
 }
 // attack bonus
