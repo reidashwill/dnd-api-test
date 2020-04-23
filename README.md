@@ -13,12 +13,12 @@ _We are using this app as an opportunity to explore the open5e API that we will 
 
 |   Behavior Description   |  Input Ex.   |        Output Ex.        |
 |------------------------------|--------------|--------------------------|
-| 1. Make two seperate API calls to the open5e API to return two monster objects
-| 2. Display the stats of these monsters to the user.
-| 3. Creating a "dice roll" function to simulate the attacks the monsters are capable of
-| 4. Adding the attack bonus of the monsters to the dice roll, and comparing that number to the other monsters AC to determine whether or not the attack was sucessful.
-| 5. If attack is sucessful, reduce the target monsters hit points accordingly
-| 6. If one monsters hit points drops to 0, it is dead, and the other monster wins!
+| 1.[x]Make two seperate API calls to the open5e API to return two monster objects
+| 2.[]Display the stats of these monsters to the user.
+| 3.[]Creating a "dice roll" function to simulate the attacks the monsters are capable of
+| 4.[]Adding the attack bonus of the monsters to the dice roll, and comparing that number to the other monsters AC to determine whether or not the attack was sucessful.
+| 5.[]If attack is sucessful, reduce the target monsters hit points accordingly
+| 6.[]If one monsters hit points drops to 0, it is dead, and the other monster wins!
 
 ## Known Bugs
 * 

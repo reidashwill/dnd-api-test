@@ -15,8 +15,7 @@ export class Monster{
       }else{
         jsonifiedResponse = false;
       }
-      let orc = new Monster(jsonifiedResponse.armor_class,jsonifiedResponse.actions[1].attack_bonus,jsonifiedResponse.hit_points, 9);
-      console.log(orc);
+      
   
       return jsonifiedResponse;
     }catch(error){
@@ -34,9 +33,6 @@ export class Monster{
       }else{
         jsonifiedResponse = false;
       }
-      let dragon = new Monster(jsonifiedResponse.armor_class,jsonifiedResponse.actions[1].attack_bonus,jsonifiedResponse.hit_points, 17);
-      console.log(dragon);
-
       return jsonifiedResponse;
     }catch(error){
       return false;
