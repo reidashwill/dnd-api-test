@@ -7,27 +7,20 @@
 </head>
 <body>
   <h1>Welcome to Monster fight club!</h1>
-<h4>We only have one rule; don't talk about monster fight club!</h4>
+  <h4>We only have one rule; don't talk about monster fight club!</h4>
   <div>
-  <button id="monster1Button" class="btn btn-info">Monster 1</button>
-  <div><span id="orcReturn">
-  <ul>
-
-  </ul>
-  </span>
-  <button id="roll">attack</button>
-</div>
-  </br>
-  <button id="monster2Button" class="btn btn-danger">Monster 2</button>
-  <div><span id="dragonReturn">
-    <ul>
-
-    </ul>
-  </span>
-<button id="roll">attack</button>
+    <form id=monsterSelect>
+      <h3>Choose your monsters!</h3>
+      <select id=monster1>
+        <option id="aboleth" value="`https://api.open5e.com/monsters/aboleth`">Aboleth</option>
+       </select> 
+      
+      <select id=monster1>
+        <option id="youngGoldDragon" value="`https://api.open5e.com/monsters/young-gold-dragon`">Young Gold Dragon</option>
+      </select>
+      <button type="submit">comfirm monsters</button>
+    </form>  
   </div>
-  </div>
-
-  
+  </br>  
 </body>
 </html>
