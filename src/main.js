@@ -4,37 +4,150 @@ import './styles.css';
 import $ from "jquery";
 import { Monster } from './../src/bl.js';
 
-$(document).ready(function() {
-  
+// $("#mon1Attk").click(function () {
+//   $("#mon1Attk").hide();
+//   $(" #mon2Attk").show();
+//   // monster1.monster1Attack();
+//   // console.log(monster1);
+// });
 
-  $('#monster1Submit').click(function() {
-      event.preventDeafault();
-      if(monsterSelect === "aboleth"){
-      let monster1 = 
+
+// $("#mon2Attk").click(function () {
+//   $("#mon2Attk").hide();
+//   $("#mon1Attk").show();
+//   // monster2.monster2Attack();
+// });
+
+function showMonster1(monster1) {
+  $("#monster1Stats").html("You have chosen the " + monster1.name + "! Here are its stats: " + "<li>Armor Class: " + monster1.ac + "</li><li> Attack Bonus: " +  monster1.attackBonus + "</li><li id='monster1Hp'> Hit Points: " + monster1.hitPoints + "</li>" + "<li> Damage: " + monster1.damage + "</li>");
+}
+function showMonster2(monster2) {
+  $("#monster2Stats").html("You have chosen the " + monster2.name + "! Here are its stats: " + "<li>Armor Class: " + monster2.ac + "</li><li> Attack Bonus: " +  monster2.attackBonus + "</li>" + "<li id='monster2Hp'> Hit Points: " + monster2.hitPoints + "</li>" + "<li> Damage: " + monster2.damage + "</li>");
+}
+$(document).ready(function () {
+  $('#monsterSelect').submit(function (event) {
+    event.preventDefault();
+
+    let monster1;
+    let monster2;
+    // monster one api array
+    let apiArray1 = [`https://api.open5e.com/monsters/aboleth`, `https://api.open5e.com/monsters/grave-behemoth`, `https://api.open5e.com/monsters/cave-giant`]
+    // monster two api array
+    let apiArray2 = [`https://api.open5e.com/monsters/young-gold-dragon`, `https://api.open5e.com/monsters/alchemist-archer`, `https://api.open5e.com/monsters/automata-devil`]
+    
+    $("#mon1Attk").click(function () {
+      $("#mon1Attk").hide();
+      $(" #mon2Attk").show();
+      monster1.monster1Attack(monster2);
+      console.log("m2: " + monster2.hitPoints)
+      $("#monster2Hp").html("Hit Points: " + monster2.hitPoints);
+
+      if (monster2.hitPoints <= 0){
+        $("#p1Win").show();
+        $("#mon1Attk").hide();
+        $("#mon2Attk").hide();
       }
-    (async () => {
+    });
 
-      let monster1 = new Monster();
-      const response = await mon1.monster1Grab();
-      mon1.ac = response.armor_class;
-      mon1.attackBonus = response.actions[1].attack_bonus;
-      mon1.hitPoints = response.hit_points;
-      mon1.damage = 9;
-  //     $('#monster1Return').html("You chose an orc as your champion! Here are its stats!  <li> Armor Class: " + orc.ac + "</li><li>Attack Bonus: " + orc`````````````````````.attackBonus + "</li><li> Hit Points:" + orc.hitPoints);
-  //     mon1.monster2Attack();
-  //   })();
-  // });
-  // $('#monster2Button').click(function () {
-  //   (async () => {
-  //     let mon2 = new Monster();
-  //     const response = await mon2.monster2Grab();
-  //     dragon.ac = response.armor_class;
-  //     dragon.attackBonus = response.actions[1].attack_bonus;
-  //     dragon.hitPoints = response.hit_points;
-  //     dragon.damage = 9;
-  //     $('#dragonReturn').html("You chose a Dragon as your champion! Here are its stats!  <li> Armor Class: " + dragon.ac + "</li><li>Attack Bonus: " + dragon.attackBonus + "</li><li> Hit Points:" + dragon.hitPoints);
-  //     mon2.monster2Attack();
-  //   })();
-  // });
 
-});
+    $("#mon2Attk").click(function () {
+      $("#mon2Attk").hide();
+      $("#mon1Attk").show();
+      monster2.monster2Attack(monster1);
+      console.log("m1:" + monster1.hitPoints);
+      $("#monster1Hp").html("Hit Points: " + monster1.hitPoints);
+      if (monster1.hitPoints <= 0) {
+        $("#p2Win").show();
+        $("#mon1Attk").hide();
+        $("#mon2Attk").hide();
+      }
+    });
+    // monster 1 options
+    if ($("#monster1").val() === "aboleth") {
+      (async () => {
+        monster1 = new Monster();
+        let response = await monster1.monster1Grab(apiArray1[0]);
+        monster1.name = response.name;
+        monster1.ac = response.armor_class;
+        monster1.attackBonus = response.actions[1].attack_bonus;
+        monster1.hitPoints = response.hit_points;
+        monster1.damage = (response.strength + response.actions[1].attack_bonus);
+        showMonster1(monster1);
+        $("#mon1Attk").show();
+        $("#monsterSelect").hide();   
+      })();
+    }
+    if ($("#monster1").val() === "graveBehemoth") {
+      (async () => {
+        monster1 = new Monster();
+        let response = await monster1.monster1Grab(apiArray1[1]);
+        monster1.name = response.name;
+        monster1.ac = response.armor_class;
+        monster1.attackBonus = response.actions[1].attack_bonus;
+        monster1.hitPoints = response.hit_points;
+        monster1.damage = (response.strength + response.actions[1].attack_bonus);
+        showMonster1(monster1);
+        $("#mon1Attk").show();
+        $("#monsterSelect").hide();   
+      })();
+    }
+    if ($("#monster1").val() === "caveGiant") {
+      (async () => {
+        monster1 = new Monster();
+        let response = await monster1.monster1Grab(apiArray1[2]);
+        monster1.name = response.name;
+        monster1.ac = response.armor_class;
+        monster1.attackBonus = response.actions[1].attack_bonus;
+        monster1.hitPoints = response.hit_points;
+        monster1.damage = (response.strength + response.actions[1].attack_bonus);
+        showMonster1(monster1);
+        $("#mon1Attk").show();
+        $("#monsterSelect").hide();   
+      })();
+    }
+    // monster two options
+    if ($("#monster2").val() === "youngGoldDragon") {
+      (async () => {
+        monster2 = new Monster();
+        let response = await monster2.monster2Grab(apiArray2[0]);
+        monster2.name = response.name;
+        monster2.ac = response.armor_class;
+        monster2.attackBonus = response.actions[1].attack_bonus;
+        monster2.hitPoints = response.hit_points;
+        monster2.damage = (response.strength + response.actions[1].attack_bonus);
+        showMonster2(monster2);
+ 
+      })();
+    }
+    if ($("#monster2").val() === "alchemistArcher") {
+      (async () => {
+        monster2 = new Monster();
+        let response = await monster2.monster2Grab(apiArray2[1]);
+        monster2.name = response.name;
+        monster2.ac = response.armor_class;
+        monster2.attackBonus = response.actions[1].attack_bonus;
+        monster2.hitPoints = response.hit_points;
+        monster2.damage = (response.strength + response.actions[1].attack_bonus);
+        showMonster2(monster2);
+
+      })();
+    }
+    if ($("#monster2").val() === "automataDevil") {
+      (async () => {
+      monster2 = new Monster();
+        let response = await monster2.monster2Grab(apiArray2[2]);
+        monster2.name = response.name;
+      monster2.ac = response.armor_class;
+    monster2.attackBonus = response.actions[1].attack_bonus;
+        monster2.hitPoints = response.hit_points;
+        monster2.damage = (response.strength + response.actions[1].attack_bonus);
+        showMonster2(monster2);
+ 
+      })();
+    }
+   
+    
+  });
+
+  
+});    

@@ -1,0 +1,9 @@
+body {
+  text-align: left;
+}
+#mon1Attk, #mon2Attk {
+  display: none;
+}
+h3{
+  display: none;
+}

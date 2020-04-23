@@ -9,17 +9,37 @@
   <h1>Welcome to Monster fight club!</h1>
   <h4>We only have one rule; don't talk about monster fight club!</h4>
   <div>
-    <form id=monsterSelect>
+    <form id="monsterSelect">
       <h3>Choose your monsters!</h3>
-      <select id=monster1>
-        <option id="aboleth" value="`https://api.open5e.com/monsters/aboleth`">Aboleth</option>
+      <select id="monster1">
+        <option id="aboleth" value="aboleth">Aboleth</option>
+        <option id="grave-behemoth" value="graveBehemoth">Grave Behemoth</option>
+        <option id="cave-giant" value="caveGiant">Cave Giant</option>
        </select> 
       
-      <select id=monster1>
-        <option id="youngGoldDragon" value="`https://api.open5e.com/monsters/young-gold-dragon`">Young Gold Dragon</option>
+      <select id= "monster2">
+        <option id= "youngGoldDragon" value="youngGoldDragon">Young Gold Dragon</option>
+        <option id= "alchemistArcher" value="alchemistArcher">Alchemist Acher</option>
+        <option id="automataDevil" value="automataDevil">Automata Devil</option>
       </select>
       <button type="submit">comfirm monsters</button>
-    </form>  
+    </form>
+    <div class="row">
+      <div class="col-md-6">
+        <ul id = "monster1Stats">
+
+        </ul>
+        <button id="mon1Attk" type="button" class="btn btn-info">Roll for damage</button>
+        <h3 id=p1Win>Player 1 Wins! Congrats!</h3>
+      </div>
+      <div class="col-md-6">
+        <ul id = "monster2Stats">
+
+        </ul>
+        <button id="mon2Attk" type="button" class="btn btn-danger">Roll for damage</button>
+        <h3 id=p2Win>Player 2 Wins! Congrats!</h3>
+      </div>
+    </div>
   </div>
   </br>  
 </body>
