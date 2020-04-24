@@ -16,6 +16,9 @@ text-align: center;
   background-color: darkolivegreen;
   opacity: 85%;
 }
+#p1Win, #p2Win {
+  display:none;
+}
  
 #playAgain {
   display: none;
