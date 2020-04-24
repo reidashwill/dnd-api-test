@@ -17,12 +17,12 @@ _We are using this app as an opportunity to explore the open5e API that we will 
 | 2.[x]Display the stats of these monsters to the user.
 | 3.[x]Creating a "dice roll" function to simulate the attacks the monsters are capable of
 | 4.[x]Adding the attack bonus of the monsters to the dice roll
-| 5.[]compare that number to the other monsters AC to determine whether or not the attack was sucessful.
-| 6.[]If attack is sucessful, reduce the target monsters hit points accordingly
-| 7.[]If one monsters hit points drops to 0, it is dead, and the other monster wins!
+| 5.[x]compare that number to the other monsters AC to determine whether or not the attack was sucessful.
+| 6.[x]If attack is sucessful, reduce the target monsters hit points accordingly
+| 7.[x]If one monsters hit points drops to 0, it is dead, and the other monster wins!
 
 ## Known Bugs
-* 
+* No known bugs.
 
 
 ## Setup/Installation Requirements
