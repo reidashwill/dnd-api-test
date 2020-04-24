@@ -8,9 +8,9 @@
 <body>
   <h1>Welcome to Monster fight club!</h1>
   <h4>We only have one rule; don't talk about monster fight club!</h4>
-  <div>
+  <div class="jumbotron">
     <form id="monsterSelect">
-      <h3>Choose your monsters!</h3>
+      <h3 class="choose">Choose your monsters!</h3>
       <select id="monster1">
         <option id="aboleth" value="aboleth">Aboleth</option>
         <option id="grave-behemoth" value="graveBehemoth">Grave Behemoth</option>
@@ -37,10 +37,13 @@
 
         </ul>
         <button id="mon2Attk" type="button" class="btn btn-danger">Roll for damage</button>
+        <br>
+        <br>
         <h3 id=p2Win>Player 2 Wins! Congrats!</h3>
       </div>
     </div>
   </div>
   </br>  
+<button class="btn btn-info" id="playAgain" onClick="window.location.reload();">Play again!</button>
 </body>
 </html>

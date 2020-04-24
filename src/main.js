@@ -31,21 +31,21 @@ $(document).ready(function () {
     let monster1;
     let monster2;
     // monster one api array
-    let apiArray1 = [`https://api.open5e.com/monsters/aboleth`, `https://api.open5e.com/monsters/grave-behemoth`, `https://api.open5e.com/monsters/cave-giant`]
+    let apiArray1 = [`https://api.open5e.com/monsters/aboleth`, `https://api.open5e.com/monsters/grave-behemoth`, `https://api.open5e.com/monsters/cave-giant`];
     // monster two api array
-    let apiArray2 = [`https://api.open5e.com/monsters/young-gold-dragon`, `https://api.open5e.com/monsters/alchemist-archer`, `https://api.open5e.com/monsters/automata-devil`]
+    let apiArray2 = [`https://api.open5e.com/monsters/young-gold-dragon`, `https://api.open5e.com/monsters/alchemist-archer`, `https://api.open5e.com/monsters/automata-devil`];
     
     $("#mon1Attk").click(function () {
       $("#mon1Attk").hide();
       $(" #mon2Attk").show();
       monster1.monster1Attack(monster2);
-      console.log("m2: " + monster2.hitPoints)
       $("#monster2Hp").html("Hit Points: " + monster2.hitPoints);
 
       if (monster2.hitPoints <= 0){
         $("#p1Win").show();
         $("#mon1Attk").hide();
         $("#mon2Attk").hide();
+        $("#playAgain").show();
       }
     });
 
@@ -54,12 +54,13 @@ $(document).ready(function () {
       $("#mon2Attk").hide();
       $("#mon1Attk").show();
       monster2.monster2Attack(monster1);
-      console.log("m1:" + monster1.hitPoints);
+
       $("#monster1Hp").html("Hit Points: " + monster1.hitPoints);
       if (monster1.hitPoints <= 0) {
         $("#p2Win").show();
         $("#mon1Attk").hide();
         $("#mon2Attk").hide();
+        $("#playAgain").show();
       }
     });
     // monster 1 options
@@ -134,11 +135,11 @@ $(document).ready(function () {
     }
     if ($("#monster2").val() === "automataDevil") {
       (async () => {
-      monster2 = new Monster();
+        monster2 = new Monster();
         let response = await monster2.monster2Grab(apiArray2[2]);
         monster2.name = response.name;
-      monster2.ac = response.armor_class;
-    monster2.attackBonus = response.actions[1].attack_bonus;
+        monster2.ac = response.armor_class;
+        monster2.attackBonus = response.actions[1].attack_bonus;
         monster2.hitPoints = response.hit_points;
         monster2.damage = (response.strength + response.actions[1].attack_bonus);
         showMonster2(monster2);

@@ -11,7 +11,6 @@ export class Monster{
       let jsonifiedResponse;
       if (response.ok && response.status === 200) {
         jsonifiedResponse = await response.json();
-        console.log(jsonifiedResponse);
       }else{
         jsonifiedResponse = false;
       }

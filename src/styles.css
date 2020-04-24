@@ -1,9 +1,22 @@
 body {
   text-align: left;
+  background-image: url(https://bit.ly/2VwxxWw);
+  background-size: 200vh;
+}
+h1,h4{
+text-align: center;
+}
+.choose{
+  display: none;
 }
 #mon1Attk, #mon2Attk {
   display: none;
 }
-h3{
+.jumbotron{
+  background-color: darkolivegreen;
+  opacity: 85%;
+}
+ 
+#playAgain {
   display: none;
 }
